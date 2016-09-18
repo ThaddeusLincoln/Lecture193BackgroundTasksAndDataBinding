@@ -20,3 +20,19 @@ else, it actually doesn't matter to the task code and it's not tied  to the UI).
 
 We can do more things with Task, such as passing parameters to it and executing 
 code when they completed. 
+
+
+
+// ============== DATA BINDING (Lecture 194) =================================
+
+When we're retrieving information from a data base, or a lot of information in 
+a background task the UI remains available to the user but nothing happens,
+therefore the user might get anxious. In those cases it might be useful to use
+a progress bar. 
+
+SERVICE (class) : we can use it to execute a task on a background thread,
+so its purpose is to help developers in using background threads correctly
+in a UI application. We can start and cancel a SERVICE and unlike a thread
+we can also restart a SERVICE.  
+
+
