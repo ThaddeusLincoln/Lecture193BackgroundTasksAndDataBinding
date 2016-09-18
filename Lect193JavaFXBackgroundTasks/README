@@ -36,3 +36,27 @@ in a UI application. We can start and cancel a SERVICE and unlike a thread
 we can also restart a SERVICE.  
 
 
+// ============= SERVICE (Lecture 195) ========================================
+
+We can restart a SERVICE as many times as we want, but it must actually be a
+"ready" state when we start it. When a service is running and completed its
+task it's in the "succeeded" state. 
+
+The SERVICE class has got methods that allow us to run code every time the
+state of the service changes so what we could do is hide the progress bar
+and the label when the application is initialized, then perhaps when the
+server state changes to "running" we can show them, and when it changes
+to succeeded we will hide them again. 
+
+NOTE : whenever we're tying 2 things together, but we also want that when
+change one other the things the other thing also changes, in those cases 
+we should always check the documentation to see if we can accomplish 
+what we want to do, by biding properties together, rather than using code. 
+Which will imply a that our code will be cleaner, and we'll have to use
+less of it. 
+
+Also if we want to pass parameters to the task that the service runs 
+we have to expose those parameters as properties of the SERVICE subclass.
+Now, since properties are a general Java topic 
+
+
