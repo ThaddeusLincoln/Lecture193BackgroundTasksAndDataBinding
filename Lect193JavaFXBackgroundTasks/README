@@ -1,0 +1,22 @@
+NOTE : it's not good practice to tie a task to the UI, because if we ever 
+change the UI then we'd also have to change the task. So in general the UI
+code and the code that processes data should be kept separate. For instance
+there's a better way to update a listview rather than with Platform.run,
+we can use what's called DATA-BINDING. The TASK class has a property called
+value which is the value returned by the task. In our example would be the 
+observable list of strings. The listview control has a property called
+items and that contains the items that the listview is displaying. What 
+we're going to do is bind the items property in the in the tasks value 
+property. So whatever or whenever the value property changes the items 
+property will update accordingly. So we no longer have to explicitly update
+the listview by calling Platform.runlater.
+
+This way we will be performing a long-running task on the background thread
+and updating the task on the UI thread. Better yet, the task doesn't know
+anything about the UI, all it's doing is returning a list of names and it
+doesn't actually care what happens to it after that (it could be written to
+a file, display it on the screen, printed to the console, or used for something
+else, it actually doesn't matter to the task code and it's not tied  to the UI).
+
+We can do more things with Task, such as passing parameters to it and executing 
+code when they completed. 
